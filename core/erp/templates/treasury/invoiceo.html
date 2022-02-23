@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+    <html>
+        <head>
+        <style>
+            @page {
+                size: a4 portrait;
+                @frame header_frame {           /* Static Frame */
+                    -pdf-frame-content: header_content;
+                    left: 0pt;
+                    top: 0pt;
+                    height: 890pt;
+                    width: 1000pt;
+                }
+                @frame content_frame {          /* Content Frame */
+                    left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+                }
+                @frame footer_frame {           /* Another static Frame */
+                    -pdf-frame-content: footer_content;
+                    left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+                }
+            }
+        </style>
+        </head>
+        
+        <body>
+            <!-- Content for Static Frame 'header_frame' -->
+            <div id="header_content">
+              <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+              </div>
+        
+            <!-- HTML Content -->
+            <div>
+                  <center>
+                  <h1><b>EMPRESA PÚBLICA UPEC-CREATIVA EP </b></h1>
+              </center>
+              <center>
+                <h1><b>TESORERIA </b></h1>
+        
+              </center>
+              <center>
+                <h2><b>PROYECTO TESORERIA</b></h2>
+                <h1 style="text-align: left;"><b></b></h1>
+              </center>
+<!-- COMENTAR DESDE AQUI PARA ABAJO, GENERA HOJA EN BLANCO -->
+
+               <h1> Con el siguiente recibo, usted tendra que acercarce a la oficina de la
+                Empresa Pública UPEC a realizar el pago correspondiente, despues de eso
+                este documento lo subira a un repositorio como constancia del pago
+                realizado con su respectivo sello de cancelado. </h1> 
+              <hr>
+              <h1>Nombre del proyecto: <b>{{ treasury.name }}</b> </h1>
+              {% if est.id_curso %}
+              <h2>Nombre del Curso(s): {% for cursos in est.id_curso.all %} </h2>
+              <h3> {{cursos}}</h3>
+              {% for detalle in cursos.detalle.all %}
+              <li>{{detalle}} </li>
+              {% endfor %} {% endfor %} {% endif %} {% if est.id_programa %}
+              <h2>Nombre del Programa(s): {% for programa in est.id_programa.all %} </h2>
+              <h3> {{programa}} </h3>
+              <li>valor: <b> {{programa.mensualidad}} $</b></li>
+              {% endfor %} {% endif %} {% if precioCurso %}
+              <h3>Total a pagar por Curso(s): {{precioCurso}}</h3>
+              {%endif%} {% if precioPrograma %}
+              <h3>Total a pagar por Programa(s): {{precioPrograma}}</h3>
+              {%endif%}
+              <hr>
+              <h1>Estado del proyecto: <b>{{ treasury.state }}</b> </h1>
+              <hr>         
+              <h1 style="text-align: left;">Observaciones del proyecto: <b style="text-align: left;">{{ treasury.observations }}</b> </h1>
+              <hr><br>
+              <div>
+                <table style="width: 2205px; height: 200px;" border="1">
+                  <tbody>
+                    <tr>
+                      <td style="width: 458.233px; height: 18px; text-align: center;">
+                        <h1>Sello de pago</h1>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><br>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> -->
+
+
+
+                
+              </div>
+              </div>
+        </body>
+        </html>
+
+        

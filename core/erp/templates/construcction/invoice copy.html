@@ -1,0 +1,458 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+
+    .html
+    {
+        border-bottom: green 15px solid;
+        border-left: green 15px solid;
+        height: 110%;
+    }
+    .img-invoice {
+        width: 150px;
+        text-align: right;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #invoice thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #invoice tbody tr {
+        padding: 0;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+    
+    body {
+        font-size: 80%;
+        font-family: Arial;
+        font-style: italic;
+        margin: 40px   90px 
+      }
+      
+      h1 {
+        font-size: 1.85em;
+        font-family: Arial;
+      }
+      
+      h2 {
+        font-size: 1.7em;
+      }
+      
+      p {
+        font-size: 1.65em;
+        text-align: justify;
+      }
+        
+</style>
+
+<!-------- HOJA NUMERO UNO ---------->
+
+<script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+<!-- Ckeditor -->
+<script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+<body>
+
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>CKEditor</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
+        </body>
+</html>
+<img src="{{ icon }}" class="img-invoice">
+<p class="head">
+    <!-- <h1 style="text-align:center;">{{ comp.name|upper }}<br>
+    {{ comp.ruc }}<br>
+    {{ comp.address|upper }}</h1> -->
+    <script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+    <p style="text-align:right;">Propuesta No. {{ construcction.proposal }}</p>
+    <p style="text-align:right;">Tulcán, {{ construcction.date_emission }}</p>
+    
+<!-- <p style="text-align:right;">Tulcán, {{ construcction.date_registration }}</p> -->
+
+<p>
+{{ construcction.representative.profession|upper }}<br>
+{{ construcction.representative.get_full_name|upper }}<br>
+<b>{{ construcction.representative.job|upper }}</b><br>
+Presente.--
+<!-- <b>Nº CEDULA:</b> {{ project.represent.dni }}<br> -->
+</p>
+
+<p>
+Reciba un atento y cordial saludo de quienes conformamos la empresa pública UPEC-CREATIVA EP de la Universidad Politécnica Estatal del Carchi y a la vez nos permitimos expresarle el mejor de los éxitos en las actividades que muy acertadamente desempeña.<br> 
+<br> 
+De acuerdo a su requerimiento, UPEC-CREATIVA EP, con el propósito de servir como Instrumento de Gestión, pone a su consideración la propuesta de capacitación en: "<b>{{ construcction.name }}</b>".
+<br> 
+<br>
+<!-- Esta propuesta se ha diseñado de acuerdo a la Normativa de las IES y a las necesidades de su institución, bajo una metodología participativa a fin de lograr la eficiente captación de los conocimientos por parte de los asistentes. -->
+<br> 
+<br>
+Nuestro aporte profesional y técnico permitirán el cumplimiento de las expectativas y requerimientos por parte de los funcionarios de la institución. 
+<br> 
+<br>
+Para quienes hacemos la empresa pública UPEC-CREATIVA EP, será grato atenderle en nuestras líneas telefónicas o correo electrónico: (06) 2224-079 ext. 1560 / 1561 / 1562 / 1563, creativaep@upec.edu.ec / jenny.osejo@upec.edu.ec. / info.creativa@upec.edu.ec.  
+<br> 
+<br>
+<br>
+Cordialmente,
+<br> 
+<br>
+<br>
+<br>
+Ing. Jenny Osejo Dominguez, Mgtr.
+<br>
+<b>GERENTE GENERAL (S)</b>
+<br>
+<b>UPEC-CREATIVA EP</b>
+<br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+
+<!-------- HOJA NUMERO DOS ---------->
+<body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+    </p>
+
+<p style="text-align:center;">
+    <b>"<b>{{ construcction.name |upper }}</b>" </b>
+    </p>
+
+<p>
+<b><u>INTRODUCCION:</u></b><br>
+</p>
+
+{{ construcction.managed | safe }}<br>
+
+
+<!-- <b><u>INTRODUCCION:</u></b><br>
+</p> -->
+
+{{ construcction.ogenral | safe }}<br>
+
+
+<p>
+    
+    En cualquier espacio de la sociedad, disertar aspectos inherentes a la universidad y a sus funciones siempre será un reto, que, además de voluntad requiere de un profundo conocimiento de nuestra historia, de la historia de los pueblos, pues ella, en diversas formas siempre nos traslada a las concepciones o por lo menos conceptualizaciones del papel de la educación y por su puesto del papel de Universidad frente a los diversos estadios de desarrollo de la humanidad.<br> 
+<br> 
+Desde la mirada de algunos filósofos latinoamericanos como Leopoldo Zea (1981: 102). "La universidad está comprometida con la sociedad, es agente de cambio capaz de generar los conocimientos teóricos y prácticos que elevan la creación y recreación de sus individuos, necesarios para la solución de problemas a través de proyectos que estimulen la interacción recíproca universidad-comunidad, desarrollando la vida nacional en todos sus aspectos".
+<br> 
+<br>
+La fórmula Gobierno – Universidad – Sociedad, por años ha sido presentada como una herramienta “mágica” que permite solucionar los problemas del individuo, el gobierno o la sociedad, pretendiendo olvidar algunos aspectos trascendentes que difieren asimétricamente a cada uno de estos componentes
+<br> 
+<br>
+Pues si bien la Universidad forma parte de la superestructura del Estado, no necesariamente significa que en ella conviven el interés y necesidades de los gobernantes y menos que los planes y proyectos de los mismos respondan al interés prioritario de la “sociedad”.
+<br> 
+<br> 
+Resulta evidente la profunda brecha existente entre la oferta académica de las Universidades públicas y privadas del Ecuador y la creciente demanda social, ligada a la cadena productiva y de servicios, desde una perspectiva innovadora que tome en cuenta el desarrollo científico técnico. Pero sobre todo la realidad histórica, política social, cultural y ambiental de nuestros pueblos.
+<br> 
+<br> 
+En este devenir histórico, uno de los puentes de interrelación, que potencialmente está llamado a cambiar o a contribuir el divorcio presentado, al menos desde la perspectiva teórica, constituye la Extensión Universitaria, actualmente denominada Vinculación con la Sociedad, normada en los tratados legales que rigen el accionar de las IES. (LOES, RRA, REDU).
+<br> 
+<br> 
+Vinculación con la sociedad, entendida como una de las funciones sustantivas de la Universidad, que, desde nuestra perspectiva, constituye una herramienta política- académica que permite articular en la praxis la docencia y la investigación como funciones sustantivas de las IES.
+<br><br><br><br><br><br>
+
+<!-------- HOJA NUMERO TRES ---------->
+<body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p>
+    Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social.
+<br> 
+<br> 
+Papel trascendente en este enfoque destaca la acción de los estudiantes, por lo que, incorporarlos a los procesos de Vinculación con la Sociedad, en sus etapas de formación, significa brindar desde la academia, un escenario distinto y hasta cotidiano en el que  el estudiante y el docente simultáneamente pueda recrear e innovar su proceso de enseñar y aprender, “… profundizar en la teoría de la Educación como una de las aportaciones que oriente al conocimiento de la realidad educativa en primer lugar. Peiró i Gregòri, 2013.
+<br> 
+<br>
+Con estos antecedentes, UPEC-CREATIVA EP pone en su consideración el curso de capacitación en: "<b>{{ project.name }}</b>".
+<br> 
+<br>
+
+<p>
+    <b><u>CONTENIDO:</u></b><br>
+</p>
+<p>
+    <b>DIRIGIDO A:</b> docentes y personal técnico - administrativo relacionados con el componente Vinculación con la Sociedad de la Universidad Politécnica Estatal del Carchi. 
+</p>
+<p>
+    <b>OBJETIVO GENERAL:</b>
+    <br><br>El propósito de esta capacitación es contribuir a que los/las responsables del componente Vinculación con la Sociedad potencien su conocimiento enmarcado en la: LOES, RRA y REDU sobre la normatividad, modelo de gestión y generación del proyecto de vinculación. 
+</p>
+<p>
+    <b>OBJETIVOS ESPECÍFICOS:</b><br>
+    <br>
+    1.	Identificar los fundamentos normativos y reglamentarios de la Vinculación con la Sociedad (V.S.).<br>
+    2.	Desarrollar los procesos del Componente (V.S.)<br>
+    3.	Identificar y desarrollar el modelo de gestión de (V.S.).<br>
+    4.	Discutir la Propuesta del modelo de Carreras.<br>
+    5.	Identificar la fuente de Productos y Servicios de (V.S.)<br>
+    6.	Identificar el proyecto de (V.S.)<br>
+    7.	Relacionar el marco lógico con el proyecto<br>
+    <br>
+    <br>
+    
+</p>
+<br><br><br><br><br><br>
+
+<!-------- HOJA NUMERO TRES ---------->
+<body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+<p>
+    <b>ESTRUCTURA DE CONTENIDOS:</b><br>
+</p>
+<p>
+    El programa de capacitación tendrá una primera etapa a desarrollarse mediante conferencias virtuales y análisis de información bibliográfica y normativa, abordando la construcción del modelo de gestión de V.S., desarrollo del proyecto de Vinculación con la Sociedad que facilita que el participante adquiera conocimientos y dominio del entorno y gestión de (V.S.). 
+<br> 
+<br> 
+En una segunda etapa se desarrollarán talleres en los que de forma práctica se aplicara la normativa de las IES y el modelo de gestión. La temática a desarrollarse incluye:
+
+<br><br><br><br><br><br>
+
+<!-------- HOJA NUMERO TRES ---------->
+<body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p>
+    <b>ESTRUCTURA DE CONTENIDOS:</b><br>
+</p>
+
+<p>
+    Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social.
+<br> 
+<br> 
+
+<br><br><br><br><br><br>
+
+<!-------- HOJA NUMERO CUATRO ---------->
+<body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p>
+    Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social.
+<br> 
+<br> 
+
+
+<p>hola gwbrw</p>
+<p> Esto es:  <b> un elemento b </b> y esto es: <span>un span con estilo</span>  </p>
+
+<b>FACTURA: </b> {{ project.id }} 
+
+  
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<p>This is a paragraph.</p>
+<p>Specifying the font-size in percent and em displays the same size in all major browsers, and allows all browsers to resize the text!</p>
+
+<h1 style="text-align:center;">Centered Heading</h1>
+<p style="text-align:center;">Centered paragraph.</p>
+
+<p>
+    <b>FACTURA:</b> {{ project.id }}<br>
+    <b>FECHA DE VENTA:</b> {{ project.date_start }}<br>
+    <b>CLIENTE:</b> {{ project.represent.get_full_name|upper }}<br>
+    <b>Nº CEDULA:</b> {{ project.represent.dni }}<br>
+</p>
+
+<p>
+    <b>FACTURA:</b> {{ project.id }}<br>
+    <b>FECHA DE VENTA:</b> {{ project.date_start }}<br>
+    <b>CLIENTE:</b> {{ project.represent.get_full_name|upper }}<br>
+    <b>Nº CEDULA:</b> {{ project.represent.dni }}<br>
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table id="tablaPersonas" class="table table-striped table-bordered table-condensed" style="width:100%">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Pais</th>
+                            <th>Edad</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="hmtl"> some other content </div> -->
+
+
+<!-- <table id="invoice" >
+    <thead>
+    <tr>
+        <th style="width: 20%;">CATEGORIA</th>
+        <th style="width: 40%;">PRODUCTO</th>
+        <th style="width: 10%;">CANT</th>
+        <th style="width: 15%;">P.UNITARIO</th>
+        <th style="width: 15%;">TOTAL</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for d in project.detsale_set.all %}
+        <tr {% if forloop.first %}style="padding-top: 3px;" {% endif %}>
+            <td>{{ d.prod.cat.name }}</td>
+            <td>{{ d.prod.name }}</td>
+            <td class="text-center">{{ d.cant }}</td>
+            <td class="text-center">${{ d.price }}</td>
+            <td style="text-align: right;">${{ d.subtotal }}</td>
+        </tr>
+    {% endfor %}
+    <tr style="border-top: 1px solid black; padding-top: 4px;">
+        <td colspan="4"><b>SUBTOTAL</b></td>
+        <td style="text-align: right">${{ sale.subtotal }}</td>
+    </tr>
+    <tr style="padding-top: 0px;">
+        <td colspan="4"><b>IVA 12%</b></td>
+        <td style="text-align: right">${{ sale.iva }}</td>
+    </tr>
+    <tr style="padding-top: 0px;">
+        <td colspan="4"><b>TOTAL A PAGAR</b></td>
+        <td style="text-align: right">${{ sale.total }}</td>
+    </tr>
+    </tbody>
+</table>
+<table style="margin-top: 250px;">
+    <thead>
+    <tr>
+        <th>****GRACIAS POR SU COMPRA**** </th>
+    </tr>
+    <tr>
+        <th>NO SE ACEPTAN CAMBIOS NI DEVOLUCIONES</th>
+    </tr>
+    </thead>
+</table> -->
+</body>
+</html>
+
+</head>
+<body bgcolor="#93DB70">
+<p><b><h1><font> HOJA DE VIDA</font>  </H1></b></P>
+<hr width="600" SIZE =15 bgcolor >
+
+<P><b><H2>DATOS PRESONALES</H2></b></P>
+<TR>
+<TABLE border="1" width="60%" height="160" >
+<TR><TD><B>Cedula:  </B></TD> <TD >080208533-2</TD>
+<TD rowspan="12"><img src="0802085332_18012013_1857.jpeg" width="170" height="280"></TD> </TR>
+<TR><TD><B>Apellidos:  </B></TD> <TD>Mercado Cartagena</TD>   
+<TR><TD><B>Nombres:  </B></TD> <TD>Elba Gabriela</TD> 
+<TR><TD><B>Nacionalidad:  </B></TD> <TD>Ecuatoriana</TD> 
+<TR><TD><B>Lugar de Nacimiento:  </B></TD>
+  <TD>Esmeraldas</TD> 
+<TR><TD><B>Fecha de Nacimiento:  </B></TD>
+  <TD> 7 de Agosto de 1991 </TD> 
+  <TR><TD><B>Edad:  </B></TD>
+  <TD>21 </TD> 
+<TR><TD><B>Estado Civil:  </B></TD>
+  <TD>Soltera
+<TR><TD><B>Direccion:  </B></TD>
+  <TD>{{ project.name }}</TD>
+<TR><TD><B>Email:  </B></TD>
+  <TD>gabymc_07@hotmail.com </TD> 
+<TR><TD><B>Telefono:  </B></TD>
+  <TD>062 705 409</TD> 
+<TR><TD><B>Celular:  </B></TD>
+  <TD>0991687057 </TD> 
+
+</TABLE>
+
+<P><b><H2>ESTUDIOS REALIZADOS</H2></b></P>
+
+<UL>
+
+<BR><b>Primaria</b></BR>
+ <BR><li>Escuela Fiacal Mixta "Obreros del Volante"</li></BR>
+<BR><b>Secundaria</b></BR>
+<BR><li>Colegio Tecnico Nacional "Margarita Cortes"</li></BR>
+<BR><b>Superior</b></BR>
+<BR><li>Universidad Tecnica "Luis Vargas Torres"</li></BR>
+</UL>
+
+<P><b><H2>TITULO OBTENIDO</H2></b></P>
+
+<TABLE BORDER="1"width="49%" height="45">
+<tr><td><b>BACHILLER</b></td><TD> <a href="http://190.152.10.222/download/0802085332_18012013_1851.html">APLICACIONES INFORMATICA</a></td></tr>
+</table>
+
+<P><b><H2>CURSOS REALIZADOS</H2></b></P>
+<TABLE BORDER="1"width="49%" height="45">
+<tr><td> Fisica y Matematicas </td><td> <a href="http://190.152.10.222/download/0802085332_18012013_1851.html">CERTIFICADO DEL CURSO</TD> </tr>
+<tr><td> Computacion</td><td> <a href="http://190.152.10.222/download/0802085332_18012013_1851.html">CERTIFICADO DEL CURSO</TD> </tr>
+<tr><td> Relaciones Humanas </td><td> <a href="http://190.152.10.222/download/0802085332_18012013_1851.html">CERTIFICADO DEL CURSO</TD> </tr>
+</table>
+
+
+<P><b><H2><b>REFERENCIAS PERSONALES</H2></b></P>
+
+<TABLE BORDER="1"width="49%" height="45">
+<tr><td><b>Ing. Willian España</b></td><TD>0999130753</td></tr>
+<tr><td><b>Tlga. Alexandra Flores</b></td><td>0982650759</td></tr>
+<tr><td><b>Tlga.Fernanda Tinoco</b></td><td>0980209971</td></tr>
+</table>
+
+
+<b>FACTURA: </b> {{ managed | safe }} 
+    {{ form.managed | safe }}
+    <!-- {{ form.media }}
+    {{ form }}-->
+
+ <b>CONTENIDO: </b>  {{ ogeneral | safe }} 
+ {{ form.managed | safe }}
+ <!-- {{ form.ogeneral | safe }} -->
+    <!-- {{ form.media }} -->
+
+        

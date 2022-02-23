@@ -1,0 +1,473 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+
+    .html
+    {
+        border-bottom: green 15px solid;
+        border-left: green 15px solid;
+        height: 110%;
+    }
+    .div {
+        background-image: url('static\img\user.png');
+    }
+    .img-invoice {
+        width: 150px;
+        text-align: right;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #invoice thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #invoice tbody tr {
+        padding: 0;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+    
+    body {
+        font-size: 80%;
+        font-family: Arial;
+        font-style: italic;
+        margin: 50px   10px 
+      }
+      
+      h1 {
+        font-size: 1.85em;
+        font-family: Arial;
+      }
+      
+      h2 {
+        font-size: 1.7em;
+      }
+      
+      p {
+        font-size: 1.65em;
+        text-align: justify;
+      }
+
+      @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 0pt;
+            top: 0pt;
+            height: 890pt;
+            width: 1000pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 90pt; width: 450pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+        
+</style>
+
+<!-------- HOJA NUMERO UNO ---------->
+
+<script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+<!-- Ckeditor -->
+<script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+<body>
+    <div id="header_content">
+        <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+        </div>
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg"></html>>
+        <head>
+            <link rel="stylesheet" href="estilos.css">
+                <meta charset="utf-8">
+                <title>CREATIVA-EP</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+                
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                    var data = CKEDITOR.instances.editor1.getData();
+
+                    $editor_data = $_POST[ 'editor1' ];
+                </script>
+        </body>
+</html>
+<!-- logo esquina derecha ep -->
+        <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+        </div>
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg"></html>>
+        <head>
+            <link rel="stylesheet" href="estilos.css">
+                <meta charset="utf-8">
+                <title>CREATIVA-EP</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+                
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                    var data = CKEDITOR.instances.editor1.getData();
+
+                    $editor_data = $_POST[ 'editor1' ];
+                </script>
+        </body>
+</html>
+<!-- logo esquina derecha ep -->
+<!-- <img src="{{ icon }}" class="img-invoice"> -->
+<p class="head">
+</br></br>
+    <h1 style="text-align:center;">{{ comp.name|upper }}<br>
+    <!-- {{ comp.ruc }}<br> -->
+    <!-- {{ comp.address|upper }}</h1> -->
+    <script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+
+
+<!-------- HOJA NUMERO 1 ---------->
+</br>
+
+<h1><p>{{ project.organization | safe }}</p></h1>
+
+    <!-- {{ form.media }}
+    {{ form }}-->
+</br>
+
+<h2 ><p align="center">{{ perfil.type_perfil | safe }} </p></h2>
+ <!-- {{ form.ogeneral | safe }} -->
+    <!-- {{ form.media }} -->
+    </br></br>
+<p align= "center">{{ perfil.agreement }}</p>
+    </br></br>
+    <h2 align= "center">RESPONSABLE DEL PROYECTO</h2>
+    <p align= "center">{{ perfil.representative.get_full_name|upper }}<br></p>
+</br></br>
+
+<p align= "center">{{ perfil.month }},{{ perfil.year }}</p>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+
+
+<!-------- HOJA NUMERO 2 ---------->
+
+<body background="static/img/user.png"></body>>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<h2 align= "center"> INDICE DE CONTENIDOS</h2>
+<p>
+<p><!-- <b>1. Nombre del proyecto</b><br> --></p>
+        <p>1. Nombre del proyecto</p>
+
+      <p>2. Localización geográfica
+ </p>
+      <p>3.    Análisis de la situación actual (diagnóstico)
+ </p>
+      <p>     4.    Antecedentes   
+ </p>
+      <p>  5.    Justificación   
+ </p>
+      <p> 
+        6.    Proyectos relacionados y / o complementarios  
+ </p>
+      <p>  7.    Objetivos  
+ </p>
+      <p>    8.    Metas
+ </p>
+      <p>          9.    Actividades
+ </p>
+      <p>          10.  Cronograma de actividades
+ </p>
+      <p>         11.  Duración del proyecto y vida útil
+  </p>
+      <p>         12.  Beneficiarios
+  </p>
+      <p>         13.  Indicadores de resultados alcanzados: cualitativos y cuantitativos
+  </p>
+      <p>         14.  Impacto ambiental
+  </p>
+      <p>         15.  Autogestión y sostenibilidad
+  </p>
+      <p>          16.  Marco institucional
+ </p>
+      <p>         17.  Financiamiento y análisis financiero del proyecto
+  </p>
+      <p> 18.  Anexos  
+    </p>
+</br>   
+     <br>
+    <br>
+    
+</p>
+<br><br><br><br><br><br> 
+
+
+
+<!-------- Contenido de perfil de proyecto ---------->
+
+<p style="text-align:right;">
+    <img src="{{ icon }}" class="img-invoice">
+</p>
+<p></p>
+<p>
+    <b>1. Nombre del proyecto</b><br>
+    </p>
+<p>{{ perfil.name }}</p>
+<p>
+    <b>2. Localización geográfica</b>
+    </p>
+<p>{{ perfil.location }}</p>
+<p>
+    <b>3. Análisis de la situación actual (diagnóstico)</b>
+    </p>
+<p>{{ perfil.analysis }}</p>
+<p>
+    <b>4. Antecedentes</b>
+    </p>
+<p>{{ perfil.record }}</p>
+<p>
+    <b>5. Justificación</b>
+    </p>
+
+<p>{{ perfil.justification }}</p>
+<p>
+    <b>6. Proyectos relacionados y / o complementarios</b><br>
+    </p>
+<p>{{ perfil.relation }}</p>
+<p>
+    <b>7. Objetivos</b>
+    </p>
+<p>{{ perfil.objectivs | safe }}</p>
+<p>
+    <b>8. Metas</b>
+    </p>
+
+    <p>{{ perfil.goals | safe }}</p>
+
+    <p>
+        <b>9. Actividades</b>
+        </p>
+    
+        <p>{{ perfil.activities | safe }}</p>
+    <p>
+    
+        <p>   
+            <b>10. Cronograma de actividades</b>
+            </p>
+            
+        <p>{{ perfil.schedule | safe }}</p>
+
+        <p>
+            <b>11. Duración del proyecto y vida útil:</b>
+            </p>
+        <p>{{ perfil.duration }}</p>
+
+    <p>
+        <b>12. Beneficiarios</b><br>
+        </p>
+    <p>{{ perfil.beneficiaries }}</p>
+    <p>
+        <b>13. Indicadores de los resultados alcanzados</b>
+        </p>
+    <p>{{ perfil.indicators | safe }}</p>
+    <p>
+        <b>14. Impacto ambiental</b>
+        </p>
+    <p>{{ perfil.impact }}</p>
+    <p>
+        <b>15. Autogestión y sostenibilidad:</b>
+        </p>
+
+
+        <p>{{ perfil.management }}</p>
+    <p>
+        <b>16. Marco institucional</b><br>
+        </p>
+    <p>{{ perfil.framework | safe }}</p>
+    <p>
+        <b>17. Financiamiento y análisis financiero del proyecto</b>
+        </p>
+    <p>{{ perfil.financing | safe }}</p>
+    <p>
+        <b>18. ANEXOS </b>
+        </p>
+    <p>{{ perfil.annexes | safe }}
+    </p>
+    <p>
+
+
+
+<script>
+
+    var data = CKEDITOR.instances.editor1.getData();
+
+    $('#form').find('.class').each(function(index) {
+        $(this).val(CKEDITOR.instances[$(this).attr('id')].getData());
+    });
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#submit_button_id').click(function () {
+            $.post("action post file url", $("#form_id").serialize(), function (data) {});
+        });
+    });
+</script>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<br><br><br><br><br><br>
+
+
+
+<!-------- HOJA NUMERO TRES ---------->
+<!-- <body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p>
+    <b>ESTRUCTURA DE CONTENIDOS:</b><br>
+</p>
+<p>
+    
+
+<br><br><br><br><br><br> -->
+
+<!-------- HOJA NUMERO TRES ---------->
+<!-- <body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p> -->
+    <!-- <b>ESTRUCTURA DE CONTENIDOS:</b><br>
+</p>
+
+<p>
+    Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social. -->
+<!-- <br> 
+<br> 
+
+<br><br><br><br><br><br> -->
+
+<!-------- HOJA NUMERO CUATRO ---------->
+<!-- <body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p> -->
+    <!-- Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social. -->
+<!-- <br> 
+<br>  -->
+
+
+<!-- <p>hola gwbrw</p>
+<p> Esto es:  <b> un elemento b </b> y esto es: <span>un span con estilo</span>  </p>
+
+<b>FACTURA: </b> {{ project.id }} 
+
+  
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<p>This is a paragraph.</p>
+<p>Specifying the font-size in percent and em displays the same size in all major browsers, and allows all browsers to resize the text!</p>
+
+<h1 style="text-align:center;">Centered Heading</h1>
+<p style="text-align:center;">Centered paragraph.</p>
+
+<p>
+    <b>FACTURA:</b> {{ project.id }}<br>
+    <b>FECHA DE VENTA:</b> {{ project.date_start }}<br>
+    <b>CLIENTE:</b> {{ project.representative.get_full_name | upper }}<br>
+    <b>Nº CEDULA:</b> {{ project.representative.dni }}<br>
+</p> -->
+
+
+<!-- <p><b><h1><font> HOJA DE VIDA</font>  </H1></b></P>
+
+
+<P><b><H2>DATOS PRESONALES</H2></b></P>
+
+
+<P><b><H2>ESTUDIOS REALIZADOS</H2></b></P>
+
+
+<P><b><H2>TITULO OBTENIDO</H2></b></P>
+
+
+<P><b><H2>CURSOS REALIZADOS</H2></b></P>
+
+
+
+<P><b><H2><b>REFERENCIAS PERSONALES</H2></b></P> -->
+
+
+<!-- <b>FACTURA: </b> {{ project.managed | safe }}  -->
+    <!-- {{ form.managed | safe }} -->
+    <!-- {{ form.media }}
+    {{ form }}-->
+
+<!-- <P><b><H2><b>CONTENIDO:</H2></b></P> -->
+
+ <!-- <b>CONTENIDO: </b>  {{ project.ogeneral | safe }}  -->
+ <!-- {{ form.ogeneral | safe }} -->
+    <!-- {{ form.media }} -->
+
+        

@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+
+    .html
+    {
+        border-bottom: green 15px solid;
+        border-left: green 15px solid;
+        height: 110%;
+    }
+    .div {
+        background-image: url('static\img\user.png');
+    }
+    .img-invoice {
+        width: 150px;
+        text-align: right;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #invoice thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #invoice tbody tr {
+        padding: 0;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+    
+    body {
+        font-size: 80%;
+        font-family: Arial;
+        font-style: italic;
+        margin: 50px   10px 
+      }
+      
+      h1 {
+        font-size: 1.85em;
+        font-family: Arial;
+      }
+      
+      h2 {
+        font-size: 1.7em;
+      }
+      
+      p {
+        font-size: 1.65em;
+        text-align: justify;
+      }
+
+      @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 0pt;
+            top: 0pt;
+            height: 890pt;
+            width: 1000pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 90pt; width: 450pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+        
+
+    * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      /* Float four columns side by side */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+      }
+      
+      /* Remove extra left and right margins, due to padding */
+      .row {margin: 0 -5px;}
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 50%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+      
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 4px;
+        text-align: center;
+        background-color: #f1f1f1;
+      }
+
+ </style>
+
+<!-------- HOJA NUMERO UNO ---------->
+
+<script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+<!-- Ckeditor -->
+<script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+<body>
+    <div id="header_content">
+        <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+        </div>
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg"></html>>
+        <head>
+            <link rel="stylesheet" href="estilos.css">
+                <meta charset="utf-8">
+                <title>CREATIVA-EP</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+                
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                    var data = CKEDITOR.instances.editor1.getData();
+
+                    $editor_data = $_POST[ 'editor1' ];
+                </script>
+        </body>
+</html>
+<!-- logo esquina derecha ep -->
+<!-- <img src="{{ icon }}" class="img-invoice"> -->
+<p class="head">
+    <h1 style="text-align:center;">{{ comp.name|upper }}<br>
+    {{ comp.ruc }}<br>
+    {{ comp.address|upper }}</h1>
+    <script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+
+<p style="text-align:right;">Tulcán, {{ productive.date_start }}</p>
+
+<p>
+    Detalles del Proyecto <b>{{ productive.name |upper }}</b> Sector Productivo perteneciente a la Empresa Pública UPEC-CREATIVA EP de la Universidad Politécnica Estatal del Carchi:<br> 
+    <br> 
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+            <h2>Información</h2>
+            
+            <p><b>Nombre del proyecto: </b> {{ productive.name }}</p>
+            <p><b>Nombre de representante: </b> {{ productive.representative }}</p>
+            <p><b>Entidad Ejecutora: </b>{{ productive.organization }}</p>
+            <p><b>Tipo de Proyecto: </b>{{ productive.type_project }}</p>
+            <p><b>Diseño de Proyecto: </b>{{ productive.desing }}</p>
+            <p><b>Monto del Proyecto: </b>{{ productive.quantity }}</p>
+            <p><b>Detalle del Monto: </b>{{ productive.quantity_mount }}</p>
+            <p><b>Recursos Humanos: </b>{{ productive.reshumans }}</p>
+            <p><b>Descripción: </b>{{ productive.description }}</p>
+            <p><b>Fecha de Registro: </b>{{ productive.date_registration }}</p>
+            <p><b>Fecha de Inicio: </b>{{ productive.date_start }}</p>
+            <p><b>Fecha de Finalización: </b>{{ productive.date_finish }}</p>
+            <p><b>Nuevo: </b>{{ productive.new }}</p>
+            <p><b>Finalizado: </b>{{ productive.finished }}</p>
+            <p><b>Proceso: </b>{{ productive.process }}</p>
+            <p><b>Resultados: </b>{{ productive.results }}</p>
+
+            </div>
+        </div>
+
+
+   
+
+

@@ -1,0 +1,39 @@
+{% extends 'list.html' %}
+{% load static %}
+{% block head_list %}
+    <script src="{% static 'perfil/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <tr>
+        <th scope="col" style="width: 7%;">Nro</th>
+        <th scope="col" style="width: 20%;">Tipo de Proyecto</th>
+        <th scope="col" style="width: 15%;">Representante</th>
+        <th scope="col" style="width: 15%;">Nombre Proyecto</th>
+        <th scope="col" style="width: 10%;">Año</th>
+        <!-- <th scope="col" style="width: 20%;">Propuesta</th>  
+        <th scope="col" style="width: 20%;">Solictud de Personal</th> 
+        <th scope="col" style="width: 20%;">Solicitud de Material</th>  -->
+        <th scope="col" style="width: 10%;">Mes</th> 
+        
+        <!-- <th scope="col" style="width: 20%;">Fecha Registro</th> 
+        <th scope="col" style="width: 20%;">Fecha Inicio</th> -->
+        
+        <!-- <th scope="col" style="width: 20%;">Fecha Fin</th>
+        <th scope="col" style="width: 20%;">Nuevo</th>
+        <th scope="col" style="width: 20%;">Cumplido</th>  -->
+
+        <th scope="col" style="width: 10%;">Opciones</th>
+        <!-- <th scope="col" style="width: 20%;">Estado</th> -->
+
+
+    </tr>
+{% endblock %}
+
+{% block rows %}
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

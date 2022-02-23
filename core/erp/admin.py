@@ -1,0 +1,25 @@
+from django.contrib import admin
+from core.erp.models import *
+
+# Register your models here.
+admin.site.register(Category)
+admin.site.register(Product)
+admin.site.register(Client)
+admin.site.register(Project)
+admin.site.register(Sale)
+admin.site.register(DetSale)
+admin.site.register(Represent)
+admin.site.register(Perfil)
+admin.site.register(Servicesp)
+admin.site.register(Acquisitionbs)
+admin.site.register(Acquisitionservices)
+admin.site.register(Informsuni)
+admin.site.register(Position)
+admin.site.register(Employer)
+admin.site.register(Certification)
+admin.site.register(Budget)
+admin.site.register(Treasury)
+admin.site.register(Construcction)
+admin.site.register(Productive)
+admin.site.register(Perfilprod)
+admin.site.register(Publics)

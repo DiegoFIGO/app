@@ -1,0 +1,808 @@
+{% load static %}
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+    <a href="{% url 'erp:dashboard' %}" class="brand-link">
+        <img src="{% static 'img/logo.png' %}"
+            alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light"><b>CREATIVA-UPEC</b></span>
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.get_image }}" class="img-circle" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ request.user.username }}</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+               <b><li class="nav-header" text-align="center">MÓDULOS</li></b> 
+
+<!-- Proyectos  -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-align-center"></i>
+                        <p>
+                        Proyectos
+                        <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a href="{% url 'erp:represent_list' %}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Representante
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'erp:project_list' %}" class="nav-link active">
+                                <i class="nav-icon fas fa-folder-open"></i>
+                                <p>
+                                    Proyectos
+                                </p>
+                            </a>
+                        </li> -->
+<!-- Sector Productivo -->
+                        <li class="nav-item">
+                            <a href="{% url 'erp:product_list' %}" class="nav-link ">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>
+                                    Sector Productivo
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                                <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                <a href="{% url 'erp:productive_create' %}" class="nav-link">
+                                    &nbsp;&nbsp;
+                                    <i class="nav-icon far fa-file-alt"></i>
+                                   <!--   <i class="far fa-dot-circle nav-icon"></i> -->
+                                    <p>Nueva Propuesta</p>
+                                </a>
+                                </li>
+                                <li class="nav-item">
+                                <a href="{% url 'erp:productive_list' %}" class="nav-link">
+                                    &nbsp;&nbsp;
+                                    <i class="nav-icon fas fa-folder-open"></i>
+                                <!--      <i class="far fa-dot-circle nav-icon"></i>  -->
+                                    <p>Lista de Propuesta</p>
+                                </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'productive_report' %}" class="nav-link">
+                                        &nbsp;&nbsp;
+                                        <i class="nav-icon fas fa-clipboard"></i>
+                                    <!--      <i class="far fa-dot-circle nav-icon"></i>  -->
+                                        <p>Reporte de Propuesta</p>
+                                    </a>
+                                    </li>
+                                <li class="nav-item">
+                                <a href="{% url 'erp:perfilprod_create' %}" class="nav-link">
+                                    &nbsp;&nbsp;
+                                    <i class="nav-icon far fa-file-alt"></i>
+                                 <!--   <i class="far fa-dot-circle nav-icon"></i> -->
+                                    <p>Nuevo Perfil</p>
+                                </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:perfilprod_list' %}" class="nav-link">
+                                        &nbsp;&nbsp;
+                                        <i class="nav-icon fas fa-folder-open"></i>
+                                   <!--       <i class="far fa-dot-circle nav-icon"></i> -->
+                                        <p>Lista de Perfiles</p>
+                                    </a>
+                                </li>
+                                
+                             
+                            </ul>
+                        </li>
+<!-- Serv. Universitarios -->
+                        <li class="nav-item">
+                            <a href="{% url 'erp:category_list' %}" class="nav-link">
+                                <i class="nav-icon fas fa-truck-loading"></i>
+                                <p>
+                                    Serv. Universitarios
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:project_create' %}" class="nav-link">
+                                        &nbsp;&nbsp;
+                                        <i class="nav-icon far fa-file-alt"></i>
+                                        <p>
+                                                Nueva Propuesta
+                                                <!-- <i class="right fas fa-pencil-alt"></i> -->
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:project_list' %}" class="nav-link">
+                                        &nbsp;&nbsp;
+                                        <i class="nav-icon fas fa-folder-open"></i>
+                                        <p>
+                                                Lista de Propuestas
+                                        </p>
+                                    </a>
+                                </li>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:perfil_create' %}" class="nav-link">
+                                        &nbsp;&nbsp;
+                                        <i class="nav-icon far fa-file-alt"></i>
+                                        <p>
+                                                Nuevo Perfil 
+                                                <!-- <i class="right fas fa-pencil-alt"></i> -->
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'erp:perfil_list' %}" class="nav-link">
+                                        &nbsp;&nbsp;
+                                        <i class="nav-icon fas fa-folder-open"></i>
+                                        <p>
+                                                Lista de Perfiles
+                                        </p>
+                                    </a>
+                                </li>
+                                </li>
+
+<!-- Seguimiento -->
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link ">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <i class="nav-icon fas fa-align-center"></i>
+                                        <p>
+                                            Seguimiento
+                                            <!-- <i class="right fab fa-buffer"></i> -->
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                        <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                        
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link ">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <i class="nav-icon fas fa-user-edit"></i>
+                                                    <p>
+                                                        Serv. Profesionales
+                                                        <!-- <i class="right fas fa-plus"></i> -->
+                                                    </p>
+                                                </a>
+                                                    <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                        <li class="nav-item">
+                                                            <a href="{% url 'erp:servicesp_create' %}" class="nav-link">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="far fa-circle text-warning"></i> 
+                                                            <p>&nbsp;&nbsp;Nuevo Registro</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="{% url 'erp:servicesp_list' %}" class="nav-link">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="far fa-circle text-primary"></i>
+                                                            <p>&nbsp;&nbsp;Lista de Registro</p> 
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link ">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                <i class="nav-icon fas fa-box-open"></i>
+                                                                <p>
+                                                                    Adquisición Bienes
+                                                                    <!-- <i class="right fas fa-plus"></i> -->
+                                                                </p>
+                                                            </a>
+                                                                <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                                    <li class="nav-item">
+                                                                        <a href="{% url 'erp:acquisitionb_create' %}" class="nav-link">
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <i class="far fa-circle text-warning"></i> 
+                                                                        <p>&nbsp;&nbsp;Nuevo Registro</p>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="{% url 'erp:acquisitionb_list' %}" class="nav-link">
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <i class="far fa-circle text-primary"></i>
+                                                                        <p>&nbsp;&nbsp;Lista de Bienes</p> 
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                                    <li class="nav-item">
+                                                                        <a href="#" class="nav-link ">
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <i class="nav-icon fas fa-book-open"></i>
+                                                                            <p>
+                                                                                Adquisición Servicios
+
+                                                                                <!-- <i class="right fas fa-plus"></i> -->
+                                                                            </p>
+                                                                        </a>
+                                                                            <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                                                <li class="nav-item">
+                                                                                    <a href="{% url 'erp:acquisitionservices_create' %}" class="nav-link">
+                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                    <i class="far fa-circle text-warning"></i> 
+                                                                                    <p>&nbsp;&nbsp;Nueva Servicio</p>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <a href="{% url 'erp:acquisitionservices_list' %}" class="nav-link">
+                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                    <i class="far fa-circle text-primary"></i>
+                                                                                    <p>&nbsp;&nbsp;Lista de Servicios</p> 
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                                <li class="nav-item">
+                                                                                    <a href="#" class="nav-link ">
+                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                        <i class="nav-icon fas fa-calendar-alt"></i>
+                                                                                        <p>
+                                                                                            Informe Seguimiento
+            
+                                                                                            <!-- <i class="right fas fa-plus"></i> -->
+                                                                                        </p>
+                                                                                    </a>
+                                                                                        <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                                                            <li class="nav-item">
+                                                                                                <a href="{% url 'erp:informsuni_create' %}" class="nav-link">
+                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                <i class="far fa-circle text-warning"></i> 
+                                                                                                <p>&nbsp;&nbsp;Nuevo Informe</p>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="nav-item">
+                                                                                                <a href="{% url 'erp:informsuni_list' %}" class="nav-link">
+                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                <i class="far fa-circle text-primary"></i>
+                                                                                                <p>&nbsp;&nbsp;Lista de Informes</p> 
+                                                                                                </a>
+                                                                                            </li>
+                                                                        
+                                            <!-- <li class="nav-item" >
+                                                <div class="card card-primary">
+                                                    <div class="card-header">
+                                                      <h3 class="card-title">Expandable</h3>
+
+                                                      <div class="card-tools">
+                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                    <!-- /.card-header 
+                                                    <div class="card-body p-0" style="display: block;">
+                                                      <ul class="nav nav-pills flex-column">
+                                                        <li class="nav-item">
+                                                          <a class="nav-link" href="#"><i class="far fa-circle text-danger"></i> Important</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                          <a class="nav-link" href="#"><i class="far fa-circle text-warning"></i> Promotions</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                          <a class="nav-link" href="#"><i class="far fa-circle text-primary"></i> Social</a>
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <!-- /.card-body -->
+                                                <!--   </div>
+                                            </li> -->
+                                                
+                                            </ul>
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
+<!-- Serv. Construcción -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-shopping-cart"></i>
+                                <p>
+                                    Serv. Construcción
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                              <li class="nav-item">
+                                <a href="{% url 'erp:construcction_create' %}" class="nav-link ">
+                                    &nbsp;&nbsp;   
+                                    <i class="nav-icon far fa-file-alt"></i>
+                                        <!-- <i class="far fa-dot-circle nav-icon"></i> -->
+                                  <p>Crear Proyecto</p>
+                                  <!-- <i class="right fas fa-pencil-alt"></i> -->
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="{% url 'erp:construcction_list' %}" class="nav-link">
+                                    &nbsp;&nbsp;   
+                                    <i class="nav-icon fas fa-folder-open"></i>
+                                        <!-- <i class="far fa-dot-circle nav-icon"></i> -->
+                                  <p>Listado de Proyectos</p>
+                                </a>
+                              </li>
+                           <!--    <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    &nbsp;&nbsp;
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                  <p>Level 3</p>
+                                </a>
+                              </li> -->
+                            </ul>
+                        </li>
+<!-- Serv. Profesionales -->
+                        <li class="nav-item">
+                            <!-- <a href="{% url 'erp:client_list' %}" class="nav-link"> -->
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Serv. Profesionales
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <!-- <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Level 3</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Level 3</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Level 3</p>
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </li>
+                    </ul>
+                </li>
+
+<!-- Compras Públicas  -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                        Compras Públicas
+                        <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                        <a href="{% url 'erp:publics_create' %}" class="nav-link">
+                            <i class="nav-icon far fa-file-alt"></i>
+                            {% comment %} <i class="far fa-circle nav-icon"></i> {% endcomment %}
+                            <p>Nuevo Registro</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="{% url 'erp:publics_list' %}" class="nav-link active">
+                            <i class="nav-icon fas fa-folder-open"></i>
+                            {% comment %} <i class="far fa-circle nav-icon"></i> {% endcomment %}
+                            <p>Listado de Registros</p>
+                        </a>
+                        <!-- </li>
+                        <li class="nav-item">
+                        <a href="../UI/buttons.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Presupuestaria</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/sliders.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Contratos</p>
+                        </a>
+                        </li> -->
+                    </ul>
+                </li>
+
+<!-- Talento Humano  -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active"> 
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                        Talento Humano
+                        <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                   <!--      <li class="nav-item">
+                        <a href="{% url 'erp:position_create' %}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Crear Cargo</p>
+                            <i class="right fas fa-pencil-alt"></i>
+
+                        </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="{% url 'erp:position_list' %}" class="nav-link">
+                                <i class="nav-icon fas fa-user-edit"></i>
+
+                                {% comment %} <i class="far fa-circle nav-icon"></i> {% endcomment %}
+                                <p>Cargos Existentes</p>
+                            </a>
+                            </li>
+                   <!--     <li class="nav-item">
+                        <a href="{% url 'erp:employer_create' %}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Crear Empleado</p>
+                            <i class="right fas fa-pencil-alt"></i>
+
+                        </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="{% url 'erp:employer_list' %}" class="nav-link">
+                                <i class="nav-icon fas fa-folder-open"></i>
+                                {% comment %} <i class="far fa-circle nav-icon"></i> {% endcomment %}
+                                <p>Listado de Empleados</p>
+                            </a>
+                            </li>
+                        <!-- <li class="nav-item">
+                        <a href="../UI/general.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>107</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/icons.html" class="nav-link active">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Rol de Pago</p>
+                        </a>
+                        </li> -->
+                    </ul>
+                </li>
+
+<!-- Tesoreria  -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-calendar-check"></i>
+                        <p>
+                        Tesoreria
+                        <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <!-- <li class="nav-item">
+                        <a href="../UI/general.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tesoreria</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/icons.html" class="nav-link active">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tesoreria</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/buttons.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tesoreria</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/sliders.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tesoreria</p> 
+                        </li>-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                {% comment %} &nbsp;&nbsp;&nbsp;&nbsp; {% endcomment %}
+                                <i class="nav-icon fas fa-align-center"></i>
+                                <p>
+                                    Presupuesto
+                                    <!-- <i class="right fab fa-buffer"></i> -->
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                                <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                    
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link ">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="nav-icon fas fa-user-edit"></i>
+                                            <p>
+                                                Certificaciones Presupuestarias
+                                                <!-- <i class="right fas fa-plus"></i> -->
+                                            </p>
+                                        </a>
+                                    <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                        <li class="nav-item">
+                                            <a href="{% url 'erp:certification_create' %}" class="nav-link">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="nav-icon far fa-file-alt"></i>
+
+                                                {% comment %} <i class="far fa-circle text-warning"></i>  {% endcomment %}
+                                                <p>&nbsp;&nbsp;Nuevo Registro</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'erp:certification_list' %}" class="nav-link">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <i class="nav-icon fas fa-folder-open"></i>
+                                                {% comment %} <i class="far fa-circle text-primary"></i> {% endcomment %}
+                                                <p>&nbsp;&nbsp;Lista de Registro</p> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link ">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <i class="nav-icon fas fa-box-open"></i>
+                                                <p>
+                                                Presupuesto y PAC
+                                                <!-- <i class="right fas fa-plus"></i> -->
+                                                </p>
+                                            </a>
+                                    <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                        <li class="nav-item">
+                                            <a href="{% url 'erp:budget_create' %}" class="nav-link">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="nav-icon far fa-file-alt"></i>
+
+                                                {% comment %} <i class="far fa-circle text-warning"></i>  {% endcomment %}
+                                                <p>&nbsp;&nbsp;Nuevo Registro</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'erp:budget_list' %}" class="nav-link">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <i class="nav-icon fas fa-folder-open"></i>
+                                                {% comment %} <i class="far fa-circle text-primary"></i> {% endcomment %}
+                                                <p>&nbsp;&nbsp;Listado</p> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link ">
+                                            {% comment %} &nbsp;&nbsp;&nbsp;&nbsp; {% endcomment %}
+                                            <i class="nav-icon fas fa-align-center"></i>
+                                            <p>
+                                                Tesoreria
+                                                <!-- <i class="right fab fa-buffer"></i> -->
+                                                <i class="right fas fa-angle-left"></i>
+                                            </p>
+                                        </a>
+                                            <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                <li class="nav-item">
+                                                    <a href="{% url 'erp:treasury_create' %}" class="nav-link active">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="nav-icon far fa-file-alt"></i>
+                                                        
+                                                        {% comment %} <i class="far fa-circle nav-icon"></i> {% endcomment %}
+                                                        <p>Nuevo Registro</p>
+                                                    </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                    <a href="{% url 'erp:treasury_list' %}" class="nav-link">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <i class="nav-icon fas fa-folder-open"></i>
+                                                        {% comment %} <i class="far fa-circle nav-icon"></i> {% endcomment %}
+                                                        <p>Listado</p>
+                                                    </a>
+                                                    </li>
+                                                <!-- <li class="nav-item">
+                                                    <a href="#" class="nav-link ">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <i class="nav-icon fas fa-user-edit"></i>
+                                                        <p>
+                                                            Serv. Profesionales
+                                                            <i class="right fas fa-plus"></i>
+                                                        </p>
+                                                    </a>
+                                                <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'erp:servicesp_create' %}" class="nav-link">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="far fa-circle text-warning"></i> 
+                                                            <p>&nbsp;&nbsp;Nuevo Registro</p>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'erp:servicesp_list' %}" class="nav-link">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="far fa-circle text-primary"></i>
+                                                            <p>&nbsp;&nbsp;Lista de Registro</p> 
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link ">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="nav-icon fas fa-box-open"></i>
+                                                            <p>
+                                                            Adquisición Bienes
+                                                            <i class="right fas fa-plus"></i>
+                                                            </p>
+                                                        </a>
+                                                <ul class="nav nav-treeview" style="display: none;" style="margin-left: 20px;">
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'erp:acquisitionb_create' %}" class="nav-link">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="far fa-circle text-warning"></i> 
+                                                            <p>&nbsp;&nbsp;Nuevo Registro</p>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'erp:acquisitionb_list' %}" class="nav-link">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="far fa-circle text-primary"></i>
+                                                            <p>&nbsp;&nbsp;Lista de Bienes</p> 
+                                                        </a>
+                                                    </li>
+                                                </ul> -->
+                                         
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                           
+<!-- Contabilidad  -->
+
+          <!--      <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-book-open"></i>
+                        <p>
+                        Contabilidad
+                        <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        
+                 
+                         <li class="nav-item">
+                        <a href="../UI/icons.html" class="nav-link active">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Contabilidad</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/buttons.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Contabilidad</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="../UI/sliders.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Contabilidad</p>
+                        </a>
+                        </li> -->
+               <!--     </ul>
+                </li> -->
+
+<!-- Bodega  -->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-box-open"></i>
+                        <p>
+                        Bodega
+                        <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a href="{% url 'erp:category_list' %}" class="nav-link">
+                                <i class="nav-icon fas fa-truck-loading"></i>
+                                <p>
+                                    Categorías
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'erp:product_list' %}" class="nav-link ">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>
+                                    Productos
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'erp:client_list' %}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Clientes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'erp:sale_list' %}" class="nav-link ">
+                                <i class="nav-icon fas fa-shopping-cart"></i>
+                                <p>
+                                    Ventas
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'sale_report' %}" class="nav-link">
+                                <i class="nav-icon far fa-credit-card"></i>
+                                <p>Reporte de Ventas</p>
+                            </a>
+                            </li>
+                    </ul>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="{% url 'sale_report' %}" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            Reporte de Ventas
+                        </p>
+                    </a>
+                </li> -->
+<!-- 
+                {% if user == 'user.is_superuser' %}
+                        <i class="fas fa-plus"></i>
+                    {% else %}
+                        <i class="fas fa-edit"></i>
+                    {% endif %} -->
+                <li class="nav-item">
+                            <!-- <a href="{% url 'user:user_list' %}" class="nav-link" class="nav-link active"> -->
+                                <a href="{% url 'user:user_list' %}" class="nav-link active">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>
+                            Usuarios
+                        </p>
+                    </a>
+                </li>
+                    <!-- <a href="{% url 'erp:sale_list' %}" class="nav-link active">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                            Ventas
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'erp:client_list' %}" class="nav-link active">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Clientes
+                        </p>
+                    </a>
+                </li>  -->           
+            </ul>
+        </nav>
+    </div>
+</aside>
+
+
+

@@ -1,0 +1,393 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+
+    .html
+    {
+        border-bottom: green 15px solid;
+        border-left: green 15px solid;
+        height: 110%;
+    }
+    .div {
+        background-image: url('static\img\user.png');
+    }
+    .img-invoice {
+        width: 150px;
+        text-align: right;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #invoice thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #invoice tbody tr {
+        padding: 0;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+    
+    body {
+        font-size: 80%;
+        font-family: Arial;
+        font-style: italic;
+        margin: 50px   10px 
+      }
+      
+      h1 {
+        font-size: 1.85em;
+        font-family: Arial;
+      }
+      
+      h2 {
+        font-size: 1.7em;
+      }
+      
+      p {
+        font-size: 1.65em;
+        text-align: justify;
+      }
+
+      @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 0pt;
+            top: 0pt;
+            height: 890pt;
+            width: 1000pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 90pt; width: 450pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+        
+</style>
+
+<!-------- HOJA NUMERO UNO ---------->
+
+<script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+<!-- Ckeditor -->
+<script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+<body>
+    <div id="header_content">
+        <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+        </div>
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg"></html>>
+        <head>
+            <link rel="stylesheet" href="estilos.css">
+                <meta charset="utf-8">
+                <title>CREATIVA-EP</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+                
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                    var data = CKEDITOR.instances.editor1.getData();
+
+                    $editor_data = $_POST[ 'editor1' ];
+                </script>
+        </body>
+</html>
+<!-- logo esquina derecha ep -->
+        <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+        </div>
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg"></html>>
+        <head>
+            <link rel="stylesheet" href="estilos.css">
+                <meta charset="utf-8">
+                <title>CREATIVA-EP</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+                
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                    var data = CKEDITOR.instances.editor1.getData();
+
+                    $editor_data = $_POST[ 'editor1' ];
+                </script>
+        </body>
+</html>
+<!-- logo esquina derecha ep -->
+<!-- <img src="{{ icon }}" class="img-invoice"> -->
+<p class="head">
+    <!-- <h1 style="text-align:center;">{{ comp.name|upper }}<br>
+    {{ comp.ruc }}<br>
+    {{ comp.address|upper }}</h1> -->
+    <script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+
+<p style="text-align:right;">Propuesta No. 020- {{ project.proposal }}</p>
+<p style="text-align:right;">Tulcán, {{ project.date_emission }}</p>
+
+<p>
+    {{ project.representative.profession }}<br>
+    {{ project.representative.get_full_name|upper }}<br>
+    <b>{{ project.representative.job|upper }}</b><br>
+<b>{{ project.organization }}</b><br>
+Presente.--
+<!-- <b>Nº CEDULA:</b> {{ project.represent.dni }}<br> -->
+</p>
+
+<p>
+Reciba un atento y cordial saludo de quienes conformamos la empresa pública UPEC-CREATIVA EP de la Universidad Politécnica Estatal del Carchi y a la vez nos permitimos expresarle el mejor de los éxitos en las actividades que muy acertadamente desempeña.<br> 
+<br> 
+De acuerdo a su requerimiento, UPEC-CREATIVA EP, con el propósito de servir como Instrumento de Gestión, pone a su consideración la propuesta de {{ project.type_project }} en: "<b>{{ project.name }}</b>".
+<br> 
+<br>
+{{ project.desing }}
+<br> 
+<br>
+Nuestro aporte profesional y técnico permitirán el cumplimiento de las expectativas y requerimientos por parte de los funcionarios de la institución. 
+<br> 
+<br>
+Para quienes hacemos la empresa pública UPEC-CREATIVA EP, será grato atenderle en nuestras líneas telefónicas o correo electrónico: (06) 2224-079 ext. 1560 / 1561 / 1562 / 1563, creativaep@upec.edu.ec / jenny.osejo@upec.edu.ec. / info.creativa@upec.edu.ec.  
+<br> 
+<br>
+<br>
+Cordialmente,
+<br> 
+<br>
+<br>
+<br>
+Ing. Jenny Osejo Dominguez, Mgtr.
+<br>
+<b>GERENTE GENERAL (S)</b>
+<br>
+<b>UPEC-CREATIVA EP</b>
+<br><br><br><br><br><br><br><br><br>
+</body>
+
+
+<!-------- HOJA NUMERO DOS ---------->
+
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+    </p>
+
+<p style="text-align:center;">
+    <b>"<b>{{ project.name |upper }}</b>" </b>
+    </p>
+
+<p>
+<b><u>INTRODUCCION:</u></b><br>
+</p>
+
+<p>
+    {{ project.managed | safe }} 
+    
+
+    <!-- {{ form.media }}
+    {{ form }}-->
+
+
+ {{ project.ogeneral | safe }} </p>
+ <!-- {{ form.ogeneral | safe }} -->
+    <!-- {{ form.media }} -->
+    <!-- <p><b><u>MONTO:</u></b></p>
+<H1>{{ project.quantity }}</H1>
+<p>
+    <H1><u>DETALLE DE MONTO:</u></H1>
+    </p>
+<H1>{{ project.quantity_mount }}</H1>
+<p>
+    <b><u>RECURSOS HUMANOS:</u></b>
+    </p>
+<H1>{{ project.reshumans }}</H1>
+<p>
+    <b><u>DESCRIPCIÓN:</u></b><br>
+    </p>
+<H1>{{ project.description }}</H1>
+<p>
+    <b><u>FECHA DE REGISTRO:</u></b>
+    </p>
+<H1>{{ project.date_registration }}</H1>
+<p>
+    <b><u>FECHA DE INICIO:</u></b>
+    </p>
+<H1>{{ project.date_start }}</H1>
+<p>
+    <b><u>FECHA DE FINALIZACION:</u></b>
+    </p>
+<H1>{{ project.date_finish }}</H1> -->
+<!-- 
+
+
+
+<br><br><br><br><br><br>
+
+------ HOJA NUMERO TRES --------
+<body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p>
+    
+<br> 
+<br> -->
+<!-- Con estos antecedentes, UPEC-CREATIVA EP pone en su consideración el curso de capacitación en: "<b>{{ project.name }}</b>". -->
+<!-- <br> 
+<br>
+
+<p>
+    <b><u>CONTENIDO:</u></b><br>
+</p>
+<p> -->
+    <!-- <b>DIRIGIDO A:</b> docentes y personal técnico - administrativo relacionados con el componente Vinculación con la Sociedad de la Universidad Politécnica Estatal del Carchi.  -->
+<!-- </p>
+<p> -->
+    <!-- <b>OBJETIVO GENERAL:</b> -->
+    <!-- <br><br>El propósito de esta capacitación es contribuir a que los/las responsables del componente Vinculación con la Sociedad potencien su conocimiento enmarcado en la: LOES, RRA y REDU sobre la normatividad, modelo de gestión y generación del proyecto de vinculación.  -->
+<!-- </p>
+<p>
+    <b>OBJETIVOS ESPECÍFICOS:</b><br>
+    <br> -->
+    <!-- 1.	Identificar los fundamentos normativos y reglamentarios de la Vinculación con la Sociedad (V.S.).<br>
+    2.	Desarrollar los procesos del Componente (V.S.)<br>
+    3.	Identificar y desarrollar el modelo de gestión de (V.S.).<br>
+    4.	Discutir la Propuesta del modelo de Carreras.<br>
+    5.	Identificar la fuente de Productos y Servicios de (V.S.)<br>
+    6.	Identificar el proyecto de (V.S.)<br>
+    7.	Relacionar el marco lógico con el proyecto<br> -->
+    <!-- <br>
+    <br>
+    
+</p>
+<br><br><br><br><br><br> -->
+
+<!-------- HOJA NUMERO TRES ---------->
+<!-- <body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p>
+    <b>ESTRUCTURA DE CONTENIDOS:</b><br>
+</p>
+<p>
+    
+
+<br><br><br><br><br><br> -->
+
+<!-------- HOJA NUMERO TRES ---------->
+<!-- <body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p> -->
+    <!-- <b>ESTRUCTURA DE CONTENIDOS:</b><br>
+</p>
+
+<p>
+    Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social. -->
+<!-- <br> 
+<br> 
+
+<br><br><br><br><br><br> -->
+
+<!-------- HOJA NUMERO CUATRO ---------->
+<!-- <body>
+    
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+</p>
+
+<p> -->
+    <!-- Desde este enfoque, la Vinculación con la Sociedad constituye un ejercicio dinámico, de encuentro entre las necesidades sociales y académicas, en el que interactúan los estamentos universitarios con el ámbito comunitario y social, desde donde se puede con meridiana objetividad realizar una evaluación institucional sistémica y que por su puesto se materializa en la acción curricular o lo que sustentaría Cruz Rincón, J. 1988. “...mide, registra y evalúa los resultados, el impacto de las funciones de la docencia e investigación en pro de la solución de los problemas presentes en el entorno, creando direccionalidad y participación en la trasformación del sistema social. -->
+<!-- <br> 
+<br>  -->
+
+
+<!-- <p>hola gwbrw</p>
+<p> Esto es:  <b> un elemento b </b> y esto es: <span>un span con estilo</span>  </p>
+
+<b>FACTURA: </b> {{ project.id }} 
+
+  
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<p>This is a paragraph.</p>
+<p>Specifying the font-size in percent and em displays the same size in all major browsers, and allows all browsers to resize the text!</p>
+
+<h1 style="text-align:center;">Centered Heading</h1>
+<p style="text-align:center;">Centered paragraph.</p>
+
+<p>
+    <b>FACTURA:</b> {{ project.id }}<br>
+    <b>FECHA DE VENTA:</b> {{ project.date_start }}<br>
+    <b>CLIENTE:</b> {{ project.representative.get_full_name | upper }}<br>
+    <b>Nº CEDULA:</b> {{ project.representative.dni }}<br>
+</p> -->
+
+
+<!-- <p><b><h1><font> HOJA DE VIDA</font>  </H1></b></P>
+
+
+<P><b><H2>DATOS PRESONALES</H2></b></P>
+
+
+<P><b><H2>ESTUDIOS REALIZADOS</H2></b></P>
+
+
+<P><b><H2>TITULO OBTENIDO</H2></b></P>
+
+
+<P><b><H2>CURSOS REALIZADOS</H2></b></P>
+
+
+
+<P><b><H2><b>REFERENCIAS PERSONALES</H2></b></P> -->
+
+
+<!-- <b>FACTURA: </b> {{ project.managed | safe }}  -->
+    <!-- {{ form.managed | safe }} -->
+    <!-- {{ form.media }}
+    {{ form }}-->
+
+<!-- <P><b><H2><b>CONTENIDO:</H2></b></P> -->
+
+ <!-- <b>CONTENIDO: </b>  {{ project.ogeneral | safe }}  -->
+ <!-- {{ form.ogeneral | safe }} -->
+    <!-- {{ form.media }} -->
+
+        

@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+
+    .html
+    {
+        border-bottom: green 15px solid;
+        border-left: green 15px solid;
+        height: 110%;
+    }
+    .div {
+        background-image: url('static\img\user.png');
+    }
+    .img-invoice {
+        width: 150px;
+        text-align: right;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #invoice thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #invoice tbody tr {
+        padding: 0;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+    
+    body {
+        font-size: 80%;
+        font-family: Arial;
+        font-style: italic;
+        margin: 50px   10px 
+      }
+      
+      h1 {
+        font-size: 1.85em;
+        font-family: Arial;
+      }
+      
+      h2 {
+        font-size: 1.7em;
+      }
+      
+      p {
+        font-size: 1.65em;
+        text-align: justify;
+      }
+
+      @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 0pt;
+            top: 0pt;
+            height: 890pt;
+            width: 1000pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 90pt; width: 450pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+        
+</style>
+
+<!-------- HOJA NUMERO UNO ---------->
+
+<script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+<!-- Ckeditor -->
+<script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+<body>
+    <div id="header_content">
+        <img src="media/EPL.png" style="width: 1000px" alt="" text-align: center;" />
+        </div>
+ <!-- Ckeditor -->
+ <script src="{% static 'lib/ckeditor/full/ckeditor.js' %}"></script>
+
+    <!DOCTYPE html>
+<html background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg"></html>
+        <head>
+            <link rel="stylesheet" href="estilos.css">
+                <meta charset="utf-8">
+                <title>CREATIVA-EP</title>
+                <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+                
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                    var data = CKEDITOR.instances.editor1.getData();
+
+                    $editor_data = $_POST[ 'editor1' ];
+                </script>
+        </body>
+</html>
+<!-- logo esquina derecha ep -->
+<p class="head">
+    <!-- <h1 style="text-align:center;">{{ comp.name|upper }}<br>
+    {{ comp.ruc }}<br>
+    {{ comp.address|upper }}</h1> -->
+    <script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+
+    <p style="text-align:right;">Propuesta No. 020-{{ construcction.proposal }}</p>
+    <p style="text-align:right;">Tulcán, {{ construcction.date_emission }}</p>
+    
+<!-- <p style="text-align:right;">Tulcán, {{ construcction.date_registration }}</p> -->
+
+<p>
+{{ construcction.representative.profession|upper }}<br>
+{{ construcction.representative.get_full_name|upper }}<br>
+<b>{{ construcction.representative.job|upper }}</b><br>
+Presente.--
+<!-- <b>Nº CEDULA:</b> {{ project.represent.dni }}<br> -->
+</p>
+
+<p>
+Reciba un atento y cordial saludo de quienes conformamos la empresa pública UPEC-CREATIVA EP de la Universidad Politécnica Estatal del Carchi y a la vez nos permitimos expresarle el mejor de los éxitos en las actividades que muy acertadamente desempeña.<br> 
+<br> 
+De acuerdo a su requerimiento, UPEC-CREATIVA EP, con el propósito de servir como Instrumento de Gestión, pone a su consideración la propuesta de {{ construcction.type_project }} en: "<b>{{ construcction.name }}</b>".
+<br> 
+<br>
+{{ construcction.desing }}
+<br> 
+<br>
+Nuestro aporte profesional y técnico permitirán el cumplimiento de las expectativas y requerimientos por parte de los funcionarios de la institución. 
+<br> 
+<br>
+Para quienes hacemos la empresa pública UPEC-CREATIVA EP, será grato atenderle en nuestras líneas telefónicas o correo electrónico: (06) 2224-079 ext. 1560 / 1561 / 1562 / 1563, creativaep@upec.edu.ec / jenny.osejo@upec.edu.ec. / info.creativa@upec.edu.ec.  
+<br> 
+<br>
+<br>
+Cordialmente,
+<br> 
+<br>
+<br>
+<br>
+Ing. Jenny Osejo Dominguez, Mgtr.
+<br>
+<b>GERENTE GENERAL (S)</b>
+<br>
+<b>UPEC-CREATIVA EP</b>
+<br><br><br><br><br><br><br><br><br>
+</body>
+
+
+<!-------- HOJA NUMERO DOS ---------->
+
+<!--     
+<p style="text-align:right;">
+        <img src="{{ icon }}" class="img-invoice">
+    </p> -->
+
+<p style="text-align:center;">
+    <b>"<b>{{ construcction.name |upper }}</b>" </b>
+    </p>
+
+<p>
+<b><u>INTRODUCCION:</u></b><br>
+</p>
+
+<p>
+    {{ construcction.managed | safe }} 
+    
+
+    <!-- {{ form.media }}
+    {{ form }}-->
+
+
+ {{ construcction.ogeneral | safe }} </p>
+
+<!--<b>FACTURA: </b> {{ managed | safe }} 
+    {{ form.managed | safe }}
+     {{ form.media }}
+    {{ form }}-->
+
+ <!--  <b>CONTENIDO: </b>  {{ ogeneral | safe }} 
+ {{ form.managed | safe }}
+{{ form.ogeneral | safe }} -->
+    <!-- {{ form.media }} -->
+
+        
