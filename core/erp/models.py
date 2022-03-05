@@ -6,8 +6,7 @@ from django.db.models.fields import  DateField
 from django.forms import model_to_dict
 
 from config.settings import MEDIA_URL, STATIC_URL
-from core.erp.choices import gender_choices
-from core.erp.choices import month_choices
+from core.erp.choices import *
 from core.models import BaseModel
 
 from ckeditor.fields import RichTextField
@@ -138,6 +137,7 @@ class Sale(models.Model):
     subtotal = models.DecimalField(default=0.00, max_digits=9, decimal_places=2)
     iva = models.DecimalField(default=0.00, max_digits=9, decimal_places=2)
     total = models.DecimalField(default=0.00, max_digits=9, decimal_places=2)
+    status = models.CharField(max_length=30, choices=sale_choices, default=sale_choices[0][0])
 
     def __str__(self):
         return self.cli.names
@@ -150,7 +150,7 @@ class Sale(models.Model):
         item['total'] = format(self.total, '.2f')
         item['date_joined'] = self.date_joined.strftime('%Y-%m-%d')
         item['hour'] = self.hour.strftime('%H:%M:%S %p')
-        
+        item['status'] = {'id': self.status, 'name': self.get_status_display()}
         item['det'] = [i.toJSON() for i in self.detsale_set.all()]
         return item
 
@@ -686,7 +686,7 @@ class Treasury(models.Model):
 
     def get_offer(self):
         if self.offer:
-            return '{}{}'.format(STATIC_URL, 'treasurypdf/')
+            return '{}{}'.format(MEDIA_URL, self.offer)
         return '{}{}'.format(STATIC_URL, 'img/emptyc.png')
     
     class Meta:

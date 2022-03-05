@@ -45,7 +45,14 @@ $(function () {
             //         return '<img src="'+data+'" class="img-fluid d-block mx-auto" style="width: 20px; height: 20px;">';
             //     }
             // },
-          
+
+            {
+                targets: [-4],
+                class: 'text-center',
+                render: function (data, type, row) {
+                    return '<a href='+row.offer+' target="_blank"><img src="'+row.offer+'" class="img-fluid d-block mx-auto" style="width: 20px; height: 20px;"></a>';
+                }
+            },
             {
                 // targets: [-2],
                 targets: [-1],

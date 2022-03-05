@@ -118,14 +118,19 @@
                                     <label>Subtotal:</label>
                                     {{ form.subtotal }}
                                 </div>
-                                <div class="form-group">
-                                    <label>IVA:</label>
-                                    {{ form.iva }}
-                                </div>
-                                <div class="form-group">
-                                    <label>IVA Calculado:</label>
-                                    <input type="text" class="form-control" readonly name="ivacalc" value="0.00">
-                                </div>
+                                {% if request.user.is_superuser %}
+                                    <div class="form-group">
+                                        <label>IVA:</label>
+                                        {{ form.iva }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>IVA Calculado:</label>
+                                        <input type="text" class="form-control" readonly name="ivacalc" value="0.00">
+                                    </div>
+                                {% else %}
+                                    <input type="hidden" class="form-control" readonly name="iva" id="id_iva" value="0.00">
+                                    <input type="hidden" class="form-control" readonly name="ivacalc" value="0.00">
+                                {% endif %}
                                 <div class="form-group">
                                     <label>Total a pagar:</label>
                                     {{ form.total }}

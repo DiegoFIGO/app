@@ -30,7 +30,7 @@ $(function () {
             // {"data": "date_finish"},
             // {"data": "new"},
             // {"data": "finished"},
-            // {"data": "process"},
+            {"data": "process"},
             {"data": "id"},
             // {"data": "offer"},
         ],
@@ -45,11 +45,14 @@ $(function () {
             //     }
             // },
             {
-                targets: [-3],
-                // class: 'text-center',
+                targets: [-2],
+                class: 'text-center',
                 orderable: false,
                 render: function (data, type, row) {
-                    return '$ '+parseFloat(data).toFixed(2);
+                    if(row.process){
+                        return '<span class="badge badge-success">Activo</span>';
+                    }
+                    return '<span class="badge badge-danger">Inactivo</span>';
                 }
             },
             {
@@ -58,8 +61,11 @@ $(function () {
                 class: 'text-center',
                 orderable: false,
                 render: function (data, type, row) {
-                    var buttons = '<a href="/erp/productive/delete/' + row.id + '/" type="button" class="btn btn-danger btn-xs btn-flat"><i class="fas fa-trash-alt"></i></a> ';                    
-                    buttons += '<a href="/erp/productive/update/' + row.id + '/" class="btn btn-warning btn-xs btn-flat"><i class="fas fa-edit"></i></a> ';                    
+                    var buttons = '';
+                    if(row.process){
+                        buttons += '<a href="/erp/productive/delete/' + row.id + '/" type="button" class="btn btn-danger btn-xs btn-flat"><i class="fas fa-trash-alt"></i></a> ';                    
+                        buttons += '<a href="/erp/productive/update/' + row.id + '/" class="btn btn-warning btn-xs btn-flat"><i class="fas fa-edit"></i></a> ';                    
+                    }
                     // buttons += '<a href="/erp/project/details/' + row.id + '/" type="button" class="btn btn-success btn-xs btn-flat"><i class="fas fa-chart-pie"></i></a> ';
                     buttons += '<a href="/erp/productive/invoice/pdf/' + row.id + '/" target="_blank" class="btn btn-info btn-xs btn-flat"><i class="fas fa-file-pdf"></i></a> ';
                     buttons += '<a href="/erp/productive/invoicedet/pdf/' + row.id + '/" target="_blank" class="btn btn-secondary btn-xs btn-flat"><i class="fas fa-file"></i></a> ';

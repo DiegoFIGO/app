@@ -24,9 +24,9 @@ class SaleListView(LoginRequiredMixin, ValidatePermissionRequiredMixin, ListView
     template_name = 'sale/list.html'
     permission_required = 'view_sale'
 
-    # @method_decorator(csrf_exempt)
-    # def dispatch(self, request, *args, **kwargs):
-    #     return super().dispatch(request, *args, **kwargs)
+    @method_decorator(csrf_exempt)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -40,6 +40,13 @@ class SaleListView(LoginRequiredMixin, ValidatePermissionRequiredMixin, ListView
                 data = []
                 for i in DetSale.objects.filter(sale_id=request.POST['id']):
                     data.append(i.toJSON())
+            elif action == 'cancel_invoice':
+                sale = Sale.objects.get(pk=request.POST['id'])
+                sale.status = 'anulado'
+                sale.save()
+                for s in sale.detsale_set.all():
+                    s.prod.stock+=s.cant
+                    s.prod.save()
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:

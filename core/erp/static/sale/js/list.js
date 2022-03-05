@@ -58,15 +58,27 @@ $(function () {
             {"data": "subtotal"},
             {"data": "iva"},
             {"data": "total"},
+            {"data": "status.name"},
             {"data": "id"},
         ],
         columnDefs: [
             {
-                targets: [-2, -3, -4],
+                targets: [-3, -4, -5],
                 class: 'text-center',
                 orderable: false,
                 render: function (data, type, row) {
                     return '$' + parseFloat(data).toFixed(2);
+                }
+            },
+            {
+                targets: [-2],
+                class: 'text-center',
+                orderable: false,
+                render: function (data, type, row) {
+                    if(row.status.id === 'activo'){
+                        return '<span class="badge badge-success">'+row.status.name+'</span>';
+                    }
+                    return '<span class="badge badge-danger">'+row.status.name+'</span>';
                 }
             },
             {
@@ -78,6 +90,9 @@ $(function () {
                     buttons += '<a href="/erp/sale/update/' + row.id + '/" class="btn btn-warning btn-xs btn-flat"><i class="fas fa-edit"></i></a> ';
                     buttons += '<a rel="details" class="btn btn-success btn-xs btn-flat"><i class="fas fa-search"></i></a> ';
                     buttons += '<a href="/erp/sale/invoice/pdf/'+row.id+'/" target="_blank" class="btn btn-info btn-xs btn-flat"><i class="fas fa-file-pdf"></i></a> ';
+                    if(row.status.id === 'activo'){
+                        buttons += '<a rel="cancel" class="btn btn-secondary btn-xs btn-flat"><i class="fas fa-times"></i></a> '; 
+                    }
                     return buttons;
                 }
             },
@@ -88,6 +103,17 @@ $(function () {
     });
 
     $('#data tbody')
+        .on('click', 'a[rel="cancel"]', function(){
+            var tr = tblSale.cell($(this).closest('td, li')).index();
+            var data = tblSale.row(tr.row).data();
+            var parameters = new FormData();
+            parameters.append('action', 'cancel_invoice');
+            parameters.append('id', data.id);
+            submit_with_ajax(window.location.pathname, 'Notificación',
+                '¿Estas seguro de anular la siguiente factura?', parameters, function (response) {
+                    tblSale.ajax.reload();
+                });
+        })
         .on('click', 'a[rel="details"]', function () {
             var tr = tblSale.cell($(this).closest('td, li')).index();
             var data = tblSale.row(tr.row).data();

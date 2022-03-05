@@ -18,4 +18,8 @@ month_choices = (
     ('Diciembre','Diciembre'),
 )
 
+sale_choices = (
+    ('activo','Activo'),
+    ('anulado','Anulado'),
+)
 

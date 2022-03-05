@@ -3,15 +3,18 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 from core.erp.models import Sale, Productive
 from core.reports.forms import ProductiveReportForm, ReportForm
+from core.erp.mixins import ValidatePermissionRequiredMixin
 
 from django.db.models.functions import Coalesce
 from django.db.models import Sum, DecimalField 
 
 
-class ReportSaleView(TemplateView):
+class ReportSaleView( TemplateView):
     template_name = 'sale/report.html'
 
     @method_decorator(csrf_exempt)
@@ -68,7 +71,7 @@ class ReportSaleView(TemplateView):
         context['form'] = ReportForm()
         return context
 
-class ProductiveReportView(TemplateView):
+class ProductiveReportView( TemplateView):
     
     model = Productive
     template_name = 'productive/report.html'
@@ -88,7 +91,7 @@ class ProductiveReportView(TemplateView):
                 end_date = request.POST.get('end_date', '')
                 search = Productive.objects.all()
                 if len(start_date) and len(end_date):
-                    search = search.filter(date_joined__range=[start_date, end_date])
+                    search = search.filter(date_registration__range=[start_date, end_date])
                 for s in search:
                     data.append([
                         s.id,
